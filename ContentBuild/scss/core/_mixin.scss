@@ -1,0 +1,58 @@
+﻿// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Long text shadow
+// --------------------------------------------------
+
+@function MakeLongShadow($color) {
+	$val: 0px 0px $color;
+
+	@for $i from 1 through 23 {
+		$val: #{$val}, #{$i}px #{$i}px #{$color};
+		$color: $color + 0.3;
+	}
+
+	@return $val;
+}
+
+@mixin longShadow($color) {
+	text-shadow: MakeLongShadow($color);
+}
+
+// Aligment
+// --------------------------------------------------
+
+@mixin verticalAlign($position: relative) {
+	position: $position;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// Media queries
+// --------------------------------------------------
+
+@mixin maxScreen($maxWidth) {
+	@media screen and (max-width: $maxWidth) {
+		@content;
+	}
+}
+
+@mixin minScreen($minWidth) {
+	// using plus '1' for don't overlap
+	@media screen and (min-width: $minWidth + 1) {
+		@content;
+	}
+}
+
+// Font face creating
+// -------------------------------------------------
+@mixin customFont($fontName, $fileName, $path, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $fontName;
+		src: url($path + $fileName + '.woff') format('woff'),
+				 url($path + $fileName + '.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}

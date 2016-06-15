@@ -1,0 +1,875 @@
+﻿// --------------------------------------------------
+// Grid System
+// --------------------------------------------------
+
+// Grid implementation
+// --------------------------------------------------
+
+// grid definition vars
+$gridColumns: 12;
+
+.row {
+	margin-right: 0;
+	margin-left: 0;
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// common styles for small, medium, large and extra large grid columns
+.S1,
+.S2,
+.S3,
+.S4,
+.S5,
+.S6,
+.S7,
+.S8,
+.S9,
+.S10,
+.S11,
+.S12,
+.M1,
+.M2,
+.M3,
+.M4,
+.M5,
+.M6,
+.M7,
+.M8,
+.M9,
+.M10,
+.M11,
+.M12,
+.L1,
+.L2,
+.L3,
+.L4,
+.L5,
+.L6,
+.L7,
+.L8,
+.L9,
+.L10,
+.L11,
+.L12,
+.XL1,
+.XL2,
+.XL3,
+.XL4,
+.XL5,
+.XL6,
+.XL7,
+.XL8,
+.XL9,
+.XL10,
+.XL11,
+.XL12 {
+	position: relative;
+	// prevent columns from lapsing when empty
+	min-height: 1px;
+	// inner gutter via padding
+	padding-right: 0;
+	padding-left: 0;
+}
+
+// clearfix for 100% width columns
+@media (max-width: $middle) {
+	.S12 {
+		clear: both;
+	}
+}
+
+@media only screen and (min-width: $middle +1) and (max-width: $large) {
+	.M12 {
+		clear: both;
+	}
+}
+
+@media only screen and (min-width: $large + 1) and (max-width: $extraLarge) {
+	.L12 {
+		clear: both;
+	}
+}
+
+@media only screen and (min-width: $extraLarge + 1) {
+	.XL12 {
+		clear: both;
+	}
+}
+
+// Small grid
+// -------------------------
+
+// Grid classes for extra small devices like smartphones. No offset, push, or
+// pull classes are present here due to the size of the target.
+//
+// Note that `.S12` doesn't get floated on purpose--there's no need since
+// it's full-width.
+
+.S1,
+.S2,
+.S3,
+.S4,
+.S5,
+.S6,
+.S7,
+.S8,
+.S9,
+.S10,
+.S11 {
+	float: left;
+}
+
+.S1 {
+	width: percentage((1 / $gridColumns));
+}
+
+.S2 {
+	width: percentage((2 / $gridColumns));
+}
+
+.S3 {
+	width: percentage((3 / $gridColumns));
+}
+
+.S4 {
+	width: percentage((4 / $gridColumns));
+}
+
+.S5 {
+	width: percentage((5 / $gridColumns));
+}
+
+.S6 {
+	width: percentage((6 / $gridColumns));
+}
+
+.S7 {
+	width: percentage((7 / $gridColumns));
+}
+
+.S8 {
+	width: percentage((8 / $gridColumns));
+}
+
+.S9 {
+	width: percentage((9 / $gridColumns));
+}
+
+.S10 {
+	width: percentage((10/ $gridColumns));
+}
+
+.S11 {
+	width: percentage((11/ $gridColumns));
+}
+
+.S12 {
+	width: 100%;
+}
+
+// Medium grid
+// -------------------------
+
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+//
+// Note that `.M12` doesn't get floated on purpose--there's no need since
+// it's full-width.
+
+@media (min-width: $middle + 1) {
+
+	.M1,
+	.M2,
+	.M3,
+	.M4,
+	.M5,
+	.M6,
+	.M7,
+	.M8,
+	.M9,
+	.M10,
+	.M11 {
+		float: left;
+	}
+
+	.M1 {
+		width: percentage((1 / $gridColumns));
+	}
+
+	.M2 {
+		width: percentage((2 / $gridColumns));
+	}
+
+	.M3 {
+		width: percentage((3 / $gridColumns));
+	}
+
+	.M4 {
+		width: percentage((4 / $gridColumns));
+	}
+
+	.M5 {
+		width: percentage((5 / $gridColumns));
+	}
+
+	.M6 {
+		width: percentage((6 / $gridColumns));
+	}
+
+	.M7 {
+		width: percentage((7 / $gridColumns));
+	}
+
+	.M8 {
+		width: percentage((8 / $gridColumns));
+	}
+
+	.M9 {
+		width: percentage((9 / $gridColumns));
+	}
+
+	.M10 {
+		width: percentage((10/ $gridColumns));
+	}
+
+	.M11 {
+		width: percentage((11/ $gridColumns));
+	}
+
+	.M12 {
+		width: 100%;
+	}
+
+	// Push and pull columns for source order changes
+	.MPush1 {
+		left: percentage((1 / $gridColumns));
+	}
+
+	.MPush2 {
+		left: percentage((2 / $gridColumns));
+	}
+
+	.MPush3 {
+		left: percentage((3 / $gridColumns));
+	}
+
+	.MPush4 {
+		left: percentage((4 / $gridColumns));
+	}
+
+	.MPush5 {
+		left: percentage((5 / $gridColumns));
+	}
+
+	.MPush6 {
+		left: percentage((6 / $gridColumns));
+	}
+
+	.MPush7 {
+		left: percentage((7 / $gridColumns));
+	}
+
+	.MPush8 {
+		left: percentage((8 / $gridColumns));
+	}
+
+	.MPush9 {
+		left: percentage((9 / $gridColumns));
+	}
+
+	.MPush10 {
+		left: percentage((10/ $gridColumns));
+	}
+
+	.MPush11 {
+		left: percentage((11/ $gridColumns));
+	}
+
+	.MPull1 {
+		right: percentage((1 / $gridColumns));
+	}
+
+	.MPull2 {
+		right: percentage((2 / $gridColumns));
+	}
+
+	.MPull3 {
+		right: percentage((3 / $gridColumns));
+	}
+
+	.MPull4 {
+		right: percentage((4 / $gridColumns));
+	}
+
+	.MPull5 {
+		right: percentage((5 / $gridColumns));
+	}
+
+	.MPull6 {
+		right: percentage((6 / $gridColumns));
+	}
+
+	.MPull7 {
+		right: percentage((7 / $gridColumns));
+	}
+
+	.MPull8 {
+		right: percentage((8 / $gridColumns));
+	}
+
+	.MPull9 {
+		right: percentage((9 / $gridColumns));
+	}
+
+	.MPull10 {
+		right: percentage((10/ $gridColumns));
+	}
+
+	.MPull11 {
+		right: percentage((11/ $gridColumns));
+	}
+
+	// offsets
+	.MOffset1 {
+		margin-left: percentage((1 / $gridColumns));
+	}
+
+	.MOffset2 {
+		margin-left: percentage((2 / $gridColumns));
+	}
+
+	.MOffset3 {
+		margin-left: percentage((3 / $gridColumns));
+	}
+
+	.MOffset4 {
+		margin-left: percentage((4 / $gridColumns));
+	}
+
+	.MOffset5 {
+		margin-left: percentage((5 / $gridColumns));
+	}
+
+	.MOffset6 {
+		margin-left: percentage((6 / $gridColumns));
+	}
+
+	.MOffset7 {
+		margin-left: percentage((7 / $gridColumns));
+	}
+
+	.MOffset8 {
+		margin-left: percentage((8 / $gridColumns));
+	}
+
+	.MOffset9 {
+		margin-left: percentage((9 / $gridColumns));
+	}
+
+	.MOffset10 {
+		margin-left: percentage((10/ $gridColumns));
+	}
+
+	.MOffset11 {
+		margin-left: percentage((11/ $gridColumns));
+	}
+}
+
+// Large grid
+// -------------------------
+
+// Columns, offsets, pushes, and pulls for the desktop device range.
+//
+// Note that `.L12` doesn't get floated on purpose--there's no need since
+// it's full-width.
+
+@media (min-width: $large + 1) {
+
+	.L1,
+	.L2,
+	.L3,
+	.L4,
+	.L5,
+	.L6,
+	.L7,
+	.L8,
+	.L9,
+	.L10,
+	.L11 {
+		float: left;
+	}
+
+	.L1 {
+		width: percentage((1 / $gridColumns));
+	}
+
+	.L2 {
+		width: percentage((2 / $gridColumns));
+	}
+
+	.L3 {
+		width: percentage((3 / $gridColumns));
+	}
+
+	.L4 {
+		width: percentage((4 / $gridColumns));
+	}
+
+	.L5 {
+		width: percentage((5 / $gridColumns));
+	}
+
+	.L6 {
+		width: percentage((6 / $gridColumns));
+	}
+
+	.L7 {
+		width: percentage((7 / $gridColumns));
+	}
+
+	.L8 {
+		width: percentage((8 / $gridColumns));
+	}
+
+	.L9 {
+		width: percentage((9 / $gridColumns));
+	}
+
+	.L10 {
+		width: percentage((10/ $gridColumns));
+	}
+
+	.L11 {
+		width: percentage((11/ $gridColumns));
+	}
+
+	.L12 {
+		width: 100%;
+	}
+
+	// push and pull columns for source order changes
+	.LPush0 {
+		left: auto;
+	}
+
+	.LPush1 {
+		left: percentage((1 / $gridColumns));
+	}
+
+	.LPush2 {
+		left: percentage((2 / $gridColumns));
+	}
+
+	.LPush3 {
+		left: percentage((3 / $gridColumns));
+	}
+
+	.LPush4 {
+		left: percentage((4 / $gridColumns));
+	}
+
+	.LPush5 {
+		left: percentage((5 / $gridColumns));
+	}
+
+	.LPush6 {
+		left: percentage((6 / $gridColumns));
+	}
+
+	.LPush7 {
+		left: percentage((7 / $gridColumns));
+	}
+
+	.LPush8 {
+		left: percentage((8 / $gridColumns));
+	}
+
+	.LPush9 {
+		left: percentage((9 / $gridColumns));
+	}
+
+	.LPush10 {
+		left: percentage((10/ $gridColumns));
+	}
+
+	.LPush11 {
+		left: percentage((11/ $gridColumns));
+	}
+
+	.LPull0 {
+		right: auto;
+	}
+
+	.LPull1 {
+		right: percentage((1 / $gridColumns));
+	}
+
+	.LPull2 {
+		right: percentage((2 / $gridColumns));
+	}
+
+	.LPull3 {
+		right: percentage((3 / $gridColumns));
+	}
+
+	.LPull4 {
+		right: percentage((4 / $gridColumns));
+	}
+
+	.LPull5 {
+		right: percentage((5 / $gridColumns));
+	}
+
+	.LPull6 {
+		right: percentage((6 / $gridColumns));
+	}
+
+	.LPull7 {
+		right: percentage((7 / $gridColumns));
+	}
+
+	.LPull8 {
+		right: percentage((8 / $gridColumns));
+	}
+
+	.LPull9 {
+		right: percentage((9 / $gridColumns));
+	}
+
+	.LPull10 {
+		right: percentage((10/ $gridColumns));
+	}
+
+	.LPull11 {
+		right: percentage((11/ $gridColumns));
+	}
+
+	// offsets
+	.LOffset0 {
+		margin-left: 0;
+	}
+
+	.LOffset1 {
+		margin-left: percentage((1 / $gridColumns));
+	}
+
+	.LOffset2 {
+		margin-left: percentage((2 / $gridColumns));
+	}
+
+	.LOffset3 {
+		margin-left: percentage((3 / $gridColumns));
+	}
+
+	.LOffset4 {
+		margin-left: percentage((4 / $gridColumns));
+	}
+
+	.LOffset5 {
+		margin-left: percentage((5 / $gridColumns));
+	}
+
+	.LOffset6 {
+		margin-left: percentage((6 / $gridColumns));
+	}
+
+	.LOffset7 {
+		margin-left: percentage((7 / $gridColumns));
+	}
+
+	.LOffset8 {
+		margin-left: percentage((8 / $gridColumns));
+	}
+
+	.LOffset9 {
+		margin-left: percentage((9 / $gridColumns));
+	}
+
+	.LOffset10 {
+		margin-left: percentage((10/ $gridColumns));
+	}
+
+	.LOffset11 {
+		margin-left: percentage((11/ $gridColumns));
+	}
+}
+
+// Extra large grid
+// -------------------------
+
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+//
+// Note that `.XL12` doesn't get floated on purpose--there's no need since
+// it's full-width.
+
+@media (min-width: $extraLarge + 1) {
+
+	.XL1,
+	.XL2,
+	.XL3,
+	.XL4,
+	.XL5,
+	.XL6,
+	.XL7,
+	.XL8,
+	.XL9,
+	.XL10,
+	.XL11 {
+		float: left;
+	}
+
+	.XL1 {
+		width: percentage((1 / $gridColumns));
+	}
+
+	.XL2 {
+		width: percentage((2 / $gridColumns));
+	}
+
+	.XL3 {
+		width: percentage((3 / $gridColumns));
+	}
+
+	.XL4 {
+		width: percentage((4 / $gridColumns));
+	}
+
+	.XL5 {
+		width: percentage((5 / $gridColumns));
+	}
+
+	.XL6 {
+		width: percentage((6 / $gridColumns));
+	}
+
+	.XL7 {
+		width: percentage((7 / $gridColumns));
+	}
+
+	.XL8 {
+		width: percentage((8 / $gridColumns));
+	}
+
+	.XL9 {
+		width: percentage((9 / $gridColumns));
+	}
+
+	.XL10 {
+		width: percentage((10/ $gridColumns));
+	}
+
+	.XL11 {
+		width: percentage((11/ $gridColumns));
+	}
+
+	.XL12 {
+		width: 100%;
+	}
+
+	// push and pull columns for source order changes
+	.XLPush0 {
+		left: auto;
+	}
+
+	.XLPush1 {
+		left: percentage((1 / $gridColumns));
+	}
+
+	.XLPush2 {
+		left: percentage((2 / $gridColumns));
+	}
+
+	.XLPush3 {
+		left: percentage((3 / $gridColumns));
+	}
+
+	.XLPush4 {
+		left: percentage((4 / $gridColumns));
+	}
+
+	.XLPush5 {
+		left: percentage((5 / $gridColumns));
+	}
+
+	.XLPush6 {
+		left: percentage((6 / $gridColumns));
+	}
+
+	.XLPush7 {
+		left: percentage((7 / $gridColumns));
+	}
+
+	.XLPush8 {
+		left: percentage((8 / $gridColumns));
+	}
+
+	.XLPush9 {
+		left: percentage((9 / $gridColumns));
+	}
+
+	.XLPush10 {
+		left: percentage((10/ $gridColumns));
+	}
+
+	.XLPush11 {
+		left: percentage((11/ $gridColumns));
+	}
+
+	.XLPull0 {
+		right: auto;
+	}
+
+	.XLPull1 {
+		right: percentage((1 / $gridColumns));
+	}
+
+	.XLPull2 {
+		right: percentage((2 / $gridColumns));
+	}
+
+	.XLPull3 {
+		right: percentage((3 / $gridColumns));
+	}
+
+	.XLPull4 {
+		right: percentage((4 / $gridColumns));
+	}
+
+	.XLPull5 {
+		right: percentage((5 / $gridColumns));
+	}
+
+	.XLPull6 {
+		right: percentage((6 / $gridColumns));
+	}
+
+	.XLPull7 {
+		right: percentage((7 / $gridColumns));
+	}
+
+	.XLPull8 {
+		right: percentage((8 / $gridColumns));
+	}
+
+	.XLPull9 {
+		right: percentage((9 / $gridColumns));
+	}
+
+	.XLPull10 {
+		right: percentage((10/ $gridColumns));
+	}
+
+	.XLPull11 {
+		right: percentage((11/ $gridColumns));
+	}
+
+	// offsets
+	.XLOffset0 {
+		margin-left: 0;
+	}
+
+	.XLOffset1 {
+		margin-left: percentage((1 / $gridColumns));
+	}
+
+	.XLOffset2 {
+		margin-left: percentage((2 / $gridColumns));
+	}
+
+	.XLOffset3 {
+		margin-left: percentage((3 / $gridColumns));
+	}
+
+	.XLOffset4 {
+		margin-left: percentage((4 / $gridColumns));
+	}
+
+	.XLOffset5 {
+		margin-left: percentage((5 / $gridColumns));
+	}
+
+	.XLOffset6 {
+		margin-left: percentage((6 / $gridColumns));
+	}
+
+	.XLOffset7 {
+		margin-left: percentage((7 / $gridColumns));
+	}
+
+	.XLOffset8 {
+		margin-left: percentage((8 / $gridColumns));
+	}
+
+	.XLOffset9 {
+		margin-left: percentage((9 / $gridColumns));
+	}
+
+	.XLOffset10 {
+		margin-left: percentage((10/ $gridColumns));
+	}
+
+	.XLOffset11 {
+		margin-left: percentage((11/ $gridColumns));
+	}
+}
+
+// Gutters
+// --------------------------------------------------
+
+.gutter-25 {
+	margin-right: -1%;
+	margin-left: -1%;
+
+	> div {
+		padding-right: 1%;
+		padding-left: 1%;
+	}
+}
+
+.gutter-180 {
+	margin-right: -11.5%;
+	margin-left: -11.5%;
+
+	> div {
+		padding-right: 11.5%;
+		padding-left: 11.5%;
+	}
+}
+
+// Container
+// --------------------------------------------------
+
+.container {
+	margin: auto;
+	max-width: $container;
+
+	@media screen and (min-width: $small) {
+		padding-left: $containerIndent;
+		padding-right: $containerIndent;
+	}
+
+	@media screen and (max-width: $small) {
+		padding-left: $containerIndent / 2;
+		padding-right: $containerIndent / 2;
+	}
+}
+
+.container-secondary {
+	margin: auto;
+	max-width: $containerSecondary;
+
+	@media screen and (min-width: $small) {
+		padding-left: $containerIndent;
+		padding-right: $containerIndent;
+	}
+
+	@media screen and (max-width: $small) {
+		padding-left: $containerIndent / 2;
+		padding-right: $containerIndent / 2;
+	}
+}

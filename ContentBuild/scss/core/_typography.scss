@@ -1,0 +1,101 @@
+﻿// --------------------------------------------------
+// Typography
+// --------------------------------------------------
+
+* {
+	box-sizing: border-box;
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Body reset
+// --------------------------------------------------
+
+html {
+	font-size: 10px;
+	// remove gray highlight when tapping links in mobile
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent; // for some Androids
+	background-color: $concrete;
+}
+
+body {
+	color: $colorText;
+	font-family: $fontBase;
+	font-size: $fontSizeBase;
+	line-height: $lineHeightBase;
+	-webkit-font-smoothing: antialiased; // font rendering
+	letter-spacing: 2.3px;
+
+	@include maxScreen($large) {
+		line-height: 1.8;
+	}
+}
+
+// Links
+// -------------------------
+
+a,
+.link {
+	color: $mirage;
+	font-weight: bold;
+	text-decoration: none;
+	transition: color .2s linear;
+
+	&:hover,
+	&:focus {
+		color: $colorLinkHover;
+		outline: 0;
+		text-decoration: none;
+	}
+}
+
+// Images
+// -------------------------
+
+img {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+// Typography
+// --------------------------------------------------
+
+// Body text
+// -------------------------
+
+p {
+	margin: 0;
+}
+
+// Headings
+// -------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $colorHeading;
+	font-family: $fontHeading;
+	margin: 0;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.h2 {
+	font-size: 4.5rem;
+	padding-top: 4rem;
+	padding-bottom: 2.5rem;
+
+	@include maxScreen($large) {
+		font-size: 3.5rem;
+	}
+}
+
+.h3 {
+	font-size: 3.8rem;
+	padding: 1rem 0;
+}

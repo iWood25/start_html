@@ -1,0 +1,51 @@
+﻿// --------------------------------------------------
+// Form
+// --------------------------------------------------
+
+input,
+textarea {
+	background-color: $gallery;
+	border: 0;
+	box-shadow: none;
+	color: $silver;
+	display: block;
+	font-family: $fontBaron;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	padding: 2.4rem 3.4rem;
+	position: relative;
+	width: 100%;
+	// change autofill text color
+	-webkit-text-fill-color: $silver;
+
+	&:focus {
+		outline: 1px solid $alto;
+	}
+
+	&:-webkit-autofill {
+		box-shadow: 0 0 0 50px $gallery inset;
+		border-radius: 0;
+	}
+
+	// hide input placeholder on field focus
+	&:focus::-webkit-input-placeholder {
+		opacity: 0;
+	}
+
+	&:focus:-moz-placeholder {
+		opacity: 0;
+	}
+
+	&:focus::-moz-placeholder {
+		opacity: 0;
+	}
+
+	&:focus:-ms-input-placeholder {
+		opacity: 0;
+	}
+}
+
+textarea {
+	height: 36.5rem;
+	resize: none;
+}

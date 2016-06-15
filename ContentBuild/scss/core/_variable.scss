@@ -1,0 +1,73 @@
+﻿// --------------------------------------------------
+// Global Variables
+// --------------------------------------------------
+
+// Breakpoints
+// -------------------------
+
+$small: 480px;
+$middle: 767px;
+$large: 1024px;
+$extraLarge: 1280px;
+$highDefinition: 1920px;
+
+// Colors
+// -------------------------
+
+$white:						#fff;
+$concrete:				#f3f3f3;
+$gallery:					#f0f0f0;
+$alabaster:				#f8f8f8;
+$gallery:					#efefef;
+$alto:						#ddd;
+$silver:					#c0c0c0;
+$dustyGray:				#979797;
+$doveGray:				#6c6c6c;
+$mirage:					#1a2631;
+$black:						#000;
+
+// content colors
+$colorHeading: $mirage;
+$colorText: $doveGray;
+$colorLinkHover: lighten( $mirage, 30% );
+
+// Paths
+// -------------------------
+
+$pathTo_Fonts: "../font/";
+
+// Font families
+// -------------------------
+
+$fontBase: Arial, Geneva, Helvetica, sans-serif;
+$fontBaron: Baron, Geneva, Verdana, sans-serif;
+
+// font heading
+$fontHeading: $fontBaron;
+
+// Font sizes
+// -------------------------
+
+$fontSizeBase: 1.5rem;
+
+// Line heights
+// -------------------------
+
+$lineHeightBase: 1.55;
+
+// Borders
+// -------------------------
+
+$borderWhite: 3px solid $white;
+$borderBlack: 2px solid $black;
+
+// Indents
+// --------------------------------------------------
+
+$containerIndent: 3.5rem;
+
+// Container width
+// --------------------------------------------------
+
+$container: 127rem + $containerIndent * 2;
+$containerSecondary: 96.8rem + $containerIndent * 2;

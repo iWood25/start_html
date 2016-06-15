@@ -1,0 +1,18 @@
+﻿// --------------------------------------------------
+// Lists Base
+// --------------------------------------------------
+
+// unordered and ordered lists
+ul,
+ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+// styled checklists
+.list {
+	font-family: $fontBaron;
+	font-size: 1.2rem;
+	line-height: $lineHeightBase;
+}
