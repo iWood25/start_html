@@ -20,9 +20,10 @@ var path = {
 		img: './ContentBuild/img/**/*.*'
 	},
 	watch: {
-		//scss: 'src/style/**/*.scss',
-		//js: 'src/js/**/*.js',
-		//img: 'src/img/**/*.*'
+		scss: './ContentBuild/scss/**/*.scss',
+		js: './ContentBuild/js/**/*.js',
+		img: './ContentBuild/img/**/*.*',
+		html: 'index.html'
 	}
 };
 
@@ -30,12 +31,12 @@ var path = {
 gulp.task('browser-sync', function () {
 	browserSync.init({
 		server: {
-			proxy: "http://localhost:51034/"
+			baseDir: "./"
 		},
-		tunnel: true, // allows show site to your customers
-		//host: 'localhost',
-		//port: 51034,
-		logPrefix: "browser-sync"
+		notify: false // hide popup window
+		// tunnel: true, // allows show site to your customers
+		// logPrefix: "browser-sync", // change the console logging prefix
+		// logFileChanges: false // hide the console logging status
 	});
 });
 
@@ -53,7 +54,8 @@ gulp.task('sass', function () {
 	return gulp.src(path.contentBuild.scss)
 		.pipe(sass({
 			// minify scss files
-			outputStyle: 'compressed'
+			// outputStyle: 'compressed'
+			sourceComments: 'normal'
 		}).on('error', sass.logError))
 		// add css autoprefixer
 		.pipe(autoprefixer({
@@ -67,12 +69,11 @@ gulp.task('sass', function () {
 
 // sass watch
 gulp.task('sass:watch', function () {
-	gulp.watch(path.contentBuild.scss, ['sass']);
-	gulp.watch(path.contentBuild.js, ['minify-js']);
-	gulp.watch(path.contentBuild.img, ['compress-img']);
+	gulp.watch(path.watch.scss, ['sass']);
+	gulp.watch(path.watch.js, ['minify-js']);
+	gulp.watch(path.watch.img, ['compress-img']);
 	// allows to reload html files in real time
-	gulp.watch("*.html").on('change', browserSync.reload);
-
+	gulp.watch(path.watch.html).on('change', browserSync.reload);
 });
 
 // minify JS files
